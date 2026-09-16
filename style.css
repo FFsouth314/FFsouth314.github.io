@@ -1,105 +1,251 @@
-body {
+* {
     margin: 0;
-    font-family: sans-serif;
-    background: #080812;
-    color: white;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    min-height: 80vh;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #07070f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ナビゲーション */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(7, 7, 15, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a88cff;
+}
+
+
+/* HOME */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
     background:
         radial-gradient(circle at center,
-        #5b4bb7,
-        #080812 60%);
+        #5b3fc4 0%,
+        #21174d 35%,
+        #07070f 70%);
 }
 
-header h1 {
-    font-size: 80px;
-    margin: 0;
+.hero-content {
+    padding: 40px;
+}
+
+.small-title {
+    font-size: 16px;
     letter-spacing: 8px;
+    color: #bbb;
+    margin-bottom: 30px;
 }
 
-header p {
+h1 {
+    font-size: clamp(70px, 12vw, 170px);
+    line-height: 0.85;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+}
+
+.description {
     color: #aaa;
-    font-size: 18px;
-    letter-spacing: 4px;
+    margin-bottom: 40px;
+    font-size: 17px;
 }
 
-header a {
-    margin-top: 30px;
-    padding: 15px 35px;
-
-    border: 1px solid #9b8cff;
-
+.explore,
+.back-home {
+    display: inline-block;
+    padding: 18px 45px;
+    border: 1px solid #9c85ff;
     color: white;
     text-decoration: none;
-
+    letter-spacing: 3px;
     transition: 0.3s;
 }
 
-header a:hover {
-    background: #9b8cff;
+.explore:hover,
+.back-home:hover {
+    background: #7d5cff;
     transform: translateY(-5px);
 }
 
-main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 80px 30px;
+
+/* 共通セクション */
+
+.section {
+    min-height: 80vh;
+    padding: 140px 10%;
 }
 
-section {
-    margin-bottom: 100px;
+.section-number {
+    color: #8f75ff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 45px;
-    color: #9b8cff;
+    font-size: clamp(40px, 7vw, 90px);
+    letter-spacing: 5px;
+    margin-bottom: 60px;
 }
 
-.cards {
-    display: flex;
-    gap: 20px;
-}
+
+/* カード */
 
 .card {
-    flex: 1;
-    padding: 30px;
+    max-width: 800px;
+    padding: 40px;
+    margin-bottom: 25px;
 
-    background: rgba(255,255,255,0.05);
+    border: 1px solid #29243e;
+    background: linear-gradient(
+        135deg,
+        rgba(105, 76, 220, 0.15),
+        rgba(20, 20, 35, 0.5)
+    );
 
-    border: 1px solid rgba(255,255,255,0.1);
-
-    border-radius: 15px;
-
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-
-    border-color: #9b8cff;
+    transform: translateY(-8px);
+    border-color: #8064e8;
+    box-shadow: 0 15px 50px rgba(90, 60, 200, 0.25);
 }
 
-.card div {
-    font-size: 45px;
+.card h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .card p {
     color: #aaa;
+    line-height: 1.9;
 }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cards .card {
+    min-height: 250px;
+}
+
+.card-number {
+    color: #8f75ff;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+.contact > p:not(.section-number) {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+
+/* FOOTER */
 
 footer {
     padding: 30px;
     text-align: center;
-
-    color: #777;
-
     border-top: 1px solid #222;
+    color: #666;
+    font-size: 13px;
+}
+
+
+/* スマホ */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .small-title {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    .section {
+        padding: 100px 25px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
 }
