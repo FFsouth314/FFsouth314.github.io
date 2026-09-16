@@ -3,61 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>なりへいのサイト</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>MY WEBSITE</h1>
-        <p>WELCOME TO MY WORLD</p>
-        <a href="#about">EXPLORE →</a>
-    </header>
+    <!-- ナビゲーション -->
+    <nav>
+        <div class="logo">NARIHEI</div>
 
-    <main>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#hobby">HOBBY</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
 
-        <section id="about">
-            <h2>ABOUT ME</h2>
-            <p>
-                こんにちは！
-                これは僕のウェブサイトです。
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+            <p class="small-title">WELCOME TO MY WORLD</p>
+
+            <h1>MY<br>WEBSITE</h1>
+
+            <p class="description">
+                This is my personal website.
             </p>
-        </section>
 
-        <section>
-            <h2>MY HOBBIES</h2>
+            <a href="#about" class="explore">
+                EXPLORE →
+            </a>
+        </div>
 
-            <div class="cards">
+    </section>
 
-                <div class="card">
-                    <div>🎮</div>
-                    <h3>GAME</h3>
-                    <p>ゲームが好きです。</p>
-                </div>
 
-                <div class="card">
-                    <div>🎵</div>
-                    <h3>MUSIC</h3>
-                    <p>音楽を聴くのが好きです。</p>
-                </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
 
-                <div class="card">
-                    <div>📚</div>
-                    <h3>STUDY</h3>
-                    <p>新しいことを勉強しています。</p>
-                </div>
+        <p class="section-number">01 / ABOUT</p>
 
+        <h2>ABOUT ME</h2>
+
+        <div class="card">
+            <h3>こんにちは！</h3>
+
+            <p>
+                このサイトを見てくれてありがとうございます。
+                ここでは僕のことや、好きなことについて紹介していきます。
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- HOBBY -->
+    <section id="hobby" class="section">
+
+        <p class="section-number">02 / HOBBY</p>
+
+        <h2>MY HOBBIES</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <span class="card-number">01</span>
+                <h3>🎮 GAME</h3>
+                <p>
+                    好きなゲームについて紹介します。
+                </p>
             </div>
 
-        </section>
+            <div class="card">
+                <span class="card-number">02</span>
+                <h3>🎵 MUSIC</h3>
+                <p>
+                    普段聴いている音楽について。
+                </p>
+            </div>
 
-    </main>
+            <div class="card">
+                <span class="card-number">03</span>
+                <h3>📷 PHOTO</h3>
+                <p>
+                    好きな写真や思い出を載せます。
+                </p>
+            </div>
 
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+
+        <p class="section-number">03 / CONTACT</p>
+
+        <h2>CONTACT</h2>
+
+        <p>
+            最後まで見てくれてありがとう！
+        </p>
+
+        <a href="#home" class="back-home">
+            ↑ BACK TO TOP
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
-        © 2026 MY WEBSITE
+        <p>© 2026 NARIHEI</p>
     </footer>
 
 </body>
-
 </html>
